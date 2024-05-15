@@ -1,5 +1,6 @@
 
-TARGET=osA1q3
+TARGET=Q2
+
 
 CSRCS= $(TARGET).c
 CSRCS+= 
