@@ -1,5 +1,5 @@
 
-TARGET=Q2
+TARGET=day15_2_ass
 
 
 CSRCS= $(TARGET).c
@@ -9,11 +9,13 @@ COBJS=$(CSRCS:.c=.o)
 
 CC=gcc
 CFLAGS=
-LDFLAGS=
+#CFLAGS=-DDEBUG
+# -DDEBUG ==> #define DEBUG
+LDFLAGS=-lpthread
 
 # Rule 1 - for linking
 $(TARGET).out: $(COBJS)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS) 
 
 #Rule 2 - for compiling
 %.o:%.c
@@ -28,15 +30,5 @@ clean:
 	rm -f $(TARGET).out $(COBJS)
 
 .phony: run clean
-
-
-
-
-
-
-
-
-
-
 
 
